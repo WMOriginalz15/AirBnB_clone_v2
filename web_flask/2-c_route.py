@@ -23,8 +23,7 @@ def show_hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def show_c_text(text):
-    """Displays 'C ' followed by the provided text, with underscores replaced 
-    by spaces."""
+    """Displays 'C ' followed by the provided text, with underscores replaced by spaces."""
     return 'C ' + text.replace('_', ' ')
 
 
