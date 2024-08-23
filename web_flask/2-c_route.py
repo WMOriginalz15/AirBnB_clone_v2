@@ -23,10 +23,11 @@ def show_hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def show_c_text(text):
-    """Displays 'C ' followed by the provided text, with underscores replaced by spaces."""
+    """Displays 'C ' followed by the given text with underscores as spaces."""
     return 'C ' + text.replace('_', ' ')
 
 
 if __name__ == '__main__':
     # Run the Flask application on all available IP addresses at port 5000
     app.run(host='0.0.0.0', port=5000)
+    
