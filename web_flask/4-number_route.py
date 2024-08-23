@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Start a Flask application
+Start a Flask app
 """
 
 from flask import Flask
@@ -21,20 +21,20 @@ def display_hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
-    """Displays 'C ' followed by the text, replacing underscores with spaces"""
+    """Shows 'C ' + text with underscores as spaces"""
     return 'C ' + text.replace('_', ' ')
 
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_text(text='is cool'):
-    """Displays 'Python ' followed by the text, replacing underscores with spaces"""
+    """Shows 'Python ' + text with underscores as spaces"""
     return 'Python ' + text.replace('_', ' ')
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number_check(n):
-    """Displays '<n> is a number' if n is an integer"""
+    """Shows '<n> is a number' if n is int"""
     return f"{n} is a number"
 
 if __name__ == '__main__':
