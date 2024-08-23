@@ -22,6 +22,6 @@ def display_hbnb():
 
 
 if __name__ == '__main__':
-    # Start the Flask application, making it accessible on all IP addresses 
+    # Start the Flask application, making it accessible on all IP addresses
     # at port 5000
     app.run(host='0.0.0.0', port=5000)
