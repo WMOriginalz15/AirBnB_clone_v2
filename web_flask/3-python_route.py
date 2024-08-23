@@ -21,14 +21,14 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def c_route(text):
-    """Displays 'C ' followed by the value of the text variable, with underscores replaced by spaces"""
+    """Displays 'C ' followed by the text with underscores as spaces"""
     return 'C ' + text.replace('_', ' ')
 
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_route(text='is cool'):
-    """Displays 'Python ' followed by the value of the text variable, with underscores replaced by spaces"""
+    """Displays 'Python ' followed by the text with underscores as spaces"""
     return 'Python ' + text.replace('_', ' ')
 
 if __name__ == '__main__':
