@@ -23,7 +23,7 @@ def show_hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def display_c_text(text):
-    """Display 'C' followed by user-provided text ."""
+    """Display 'C' followed by user-provided text, with underscores replaced by spaces."""
     formatted_text = text.replace('_', ' ')
     return f'C {formatted_text}'
 
@@ -31,7 +31,7 @@ def display_c_text(text):
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def display_python_text(text='is cool'):
-    """Display 'Python' followed by user-provided text,."""
+    """Display 'Python' followed by user-provided text, or default to 'is cool'."""
     formatted_text = text.replace('_', ' ')
     return f'Python {formatted_text}'
 
