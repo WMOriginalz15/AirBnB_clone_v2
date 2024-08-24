@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Flask application initialization script
+Flask application initialization
 """
 
 from flask import Flask
