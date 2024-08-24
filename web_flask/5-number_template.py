@@ -1,45 +1,43 @@
+#!/usr/bin/python3
 from flask import Flask, render_template
 
-# Initialize the Flask application
+# Create an instance of the Flask class
 app = Flask(__name__)
-
-# Disable strict slashes in route definitions
 app.url_map.strict_slashes = False
 
-# Route for the root URL
 @app.route('/')
-def hello_hbnb():
+def greet_hbnb():
+    """Respond with a simple 'Hello HBNB!' message."""
     return "Hello HBNB!"
 
-# Route for /hbnb
 @app.route('/hbnb')
-def display_hbnb():
+def show_hbnb():
+    """Respond with 'HBNB'."""
     return "HBNB"
 
-# Route for /c/<text>
 @app.route('/c/<text>')
-def display_c_text(text):
-    formatted_text = text.replace('_', ' ')
-    return f"C {formatted_text}"
+def show_c_text(text):
+    """Display 'C' followed by the provided text, replacing underscores with spaces."""
+    text = text.replace('_', ' ')
+    return f"C {text}"
 
-# Route for /python/(<text>) with a default value
 @app.route('/python/', defaults={'text': 'is cool'})
 @app.route('/python/<text>')
-def display_python_text(text):
-    formatted_text = text.replace('_', ' ')
-    return f"Python {formatted_text}"
+def show_python_text(text):
+    """Display 'Python' followed by the provided text, with underscores replaced by spaces."""
+    text = text.replace('_', ' ')
+    return f"Python {text}"
 
-# Route for /number/<n> that only accepts integers
 @app.route('/number/<int:n>')
-def display_number(n):
+def show_number(n):
+    """Confirm that the given value is an integer by displaying it."""
     return f"{n} is a number"
 
-# Route for /number_template/<n> that renders an HTML page
 @app.route('/number_template/<int:n>')
-def display_number_template(n):
+def show_number_template(n):
+    """Render an HTML page displaying the provided number inside an H1 tag."""
     return render_template('number.html', n=n)
 
-# Start the Flask application
 if __name__ == '__main__':
+    # Run the Flask application on 0.0.0.0, port 5000
     app.run(host='0.0.0.0', port=5000)
-
