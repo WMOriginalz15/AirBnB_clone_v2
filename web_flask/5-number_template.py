@@ -23,7 +23,7 @@ def show_hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def display_c_text(text):
-    """Display 'C' followed by user-provided text, with underscores replaced by spaces."""
+    """Display 'C' followed by user-provided text ."""
     formatted_text = text.replace('_', ' ')
     return f'C {formatted_text}'
 
@@ -31,7 +31,7 @@ def display_c_text(text):
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def display_python_text(text='is cool'):
-    """Display 'Python' followed by user-provided text, or default to 'is cool'."""
+    """Display 'Python' followed by user-provided text,."""
     formatted_text = text.replace('_', ' ')
     return f'Python {formatted_text}'
 
@@ -51,4 +51,3 @@ def display_number_with_template(n):
 if __name__ == '__main__':
     # Start the Flask application, listening on all IP addresses and port 5000
     app.run(host='0.0.0.0', port=5000)
-
